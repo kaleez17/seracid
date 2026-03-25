@@ -43,7 +43,7 @@ export default function Portfolio() {
 
   useEffect(()=>{
     fetchProjects()
-      .then(r => setProjects(r.data))
+      .then(r => setProjects(Array.isArray(r.data) ? r.data : []))
       .catch(()=> setError('Could not load projects'))
       .finally(()=> setLoading(false));
   },[]);
@@ -58,7 +58,7 @@ export default function Portfolio() {
     {_id:6,title:'SMB Digital Launch',tag:'SMB · SEO',description:'Zero to live in 5 days with GMB integration and SEO.',image:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&auto=format&fit=crop',liveUrl:'#',githubUrl:'https://github.com/kaleez17',techs:['Next.js','SEO','GMB']},
   ];
 
-  const display = projects.length > 0 ? projects : (error ? fallback : []);
+  const display = projects.length > 0 ? projects : fallback;
 
   return (
     <section id="portfolio" style={{background:'var(--ksl-surface)'}}>
