@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const WA = 'https://wa.me/916379953691?text=Hi%20SERACID%20Solutions!%20I%27d%20like%20a%20free%20audit.';
+const TIDEL = 'https://www.google.com/maps/search/ELCOT+SEZ+Chennai';
+const MAIL_AUDIT = 'mailto:Kaleessultan415@gmail.com?subject=Free%20Audit%20Request%20-%20SERACID%20Solutions&body=Hi%20SERACID%20Team%2C%0A%0AI%27d%20like%20to%20request%20a%20free%20audit%20for%20my%20website%2Fbusiness.%0A%0AName%3A%20%0AWebsite%2FBusiness%3A%20%0APhone%3A%20';
 
 export default function Hero() {
   const canvasRef = useRef(null);
@@ -88,8 +90,8 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={fadeUp(0.65)} style={{display:'flex',gap:'1rem',justifyContent:'center',flexWrap:'wrap'}}>
-          <a href="#portfolio" className="btn-red">View Our Lab</a>
-          <a href={WA} target="_blank" rel="noreferrer" className="btn-ghost">Get a Free Audit</a>
+          <a href={TIDEL} target="_blank" rel="noreferrer" className="btn-red">View Our Lab</a>
+          <a href={MAIL_AUDIT} className="btn-ghost">Get a Free Audit</a>
         </motion.div>
       </motion.div>
 
