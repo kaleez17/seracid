@@ -30,7 +30,7 @@ export default function ProjectLog() {
 
   useEffect(()=>{
     fetchLogs(15)
-      .then(r=>setLogs(r.data))
+      .then(r => setLogs(Array.isArray(r.data) ? r.data : FALLBACK))
       .catch(()=>setLogs(FALLBACK))
       .finally(()=>setLoading(false));
   },[]);
